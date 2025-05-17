@@ -25,6 +25,7 @@ func RequireAuth(c *gin.Context) {
 	}, jwt.WithValidMethods([]string{jwt.SigningMethodHS256.Alg()}))
 	if err != nil {
 		log.Fatal(err)
+		
 	}
 
 	if claims, ok := token.Claims.(jwt.MapClaims); ok {
